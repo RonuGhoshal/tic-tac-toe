@@ -25,11 +25,11 @@ class Board extends React.Component {
     const numbers = []
     const board = []
     for(let x=0; x<3; x++){
-      numbers.push(this.renderSquare(x));
+      numbers.push(x);
     }
-    for(let y=1; y<=3; y++){
-      board.push(<div className="board-row">{numbers.map(function(number){
-        return number + 3*y
+    for(let y=0; y<3; y++){
+      board.push(<div className="board-row">{numbers.map((number) => {
+        return this.renderSquare(number + 3*y)
       })}</div>)
     }
     return (
